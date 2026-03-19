@@ -1,0 +1,202 @@
+[
+  {
+    "id":1,
+    "category": "fish",
+    "sub-category": "delicate, lean fish",
+    "food-array": ["Tilapia", "Sole", "Flounder", "Sea Bass"],
+    "pairing-style": "light, crisp, whites",
+    "pairing-suggestions": ["Pinot Gris", "Pinot Grigio", "Sauvignon Blanc", "Albariño", "Vino Verde"]
+  },
+  {
+    "id":2,
+    "category": "fish",
+    "sub-category": "medium textured fish",
+    "food-array": ["Cod", "Haddock", "Halibut"],
+    "pairing-style": "medium bodied whites",
+    "pairing-suggestions": ["Unoaked Chardonnay", "Pinot Gris", "Pinot Grigio", "Vermentino" ]
+  },
+  {
+    "id":3,
+    "category": "fish",
+    "sub-category": "oily, meaty fish",
+    "food-array": ["Salmon", "Tuna", "Swordfish", "Mackerel", "Arctic Char"],
+    "pairing-style": "full-bodies whites or light reds",
+    "pairing-suggestions": ["Oaked Chardonnary", "Viognier", "Pinot Noir", "Grenache"]
+  },
+  {
+    "id":4,
+    "category": "fish",
+    "sub-category": "shellfish",
+    "food-array": ["Lobster", "Mussel", "Oysters"],
+    "pairing-style": "crisp whites or sparkling wines",
+    "pairing-suggestions": ["Sauvignon Blanc", "Pinot Grigio", "Chardonnay", "Champagne", "Prosecco"]
+  },
+  {
+    "id":5,
+    "category": "sauce",
+    "sub-category": "zesty/citrusy sauce",
+    "food-array": [],
+    "pairing-style": "",
+    "pairing-suggestions": ["Sauvignon Blanc", "Muscadet", "Grüner Vetliner"]
+  },
+  {
+    "id":6,
+    "category": "sauce",
+    "sub-category": "rich/creamy sauce",
+    "food-array": [],
+    "pairing-style": "medium-bodied white or sparkling",
+    "pairing-suggestions": ["Oaked Chardonnay", "Viognier", "Champagne"]
+  },
+  {
+    "id":7,
+    "category": "sauce",
+    "sub-category": "spicy/asian sauce",
+    "food-array": [],
+    "pairing-style": "",
+    "pairing-suggestions": ["Reisling (off-dry)", "Gewurtztraminer", "gruner Vetliner", "Rosé"]
+  },
+  {
+    "id":8,
+    "category": "sauce",
+    "sub-category": "grilled/bbq",
+    "food-array": [],
+    "pairing-style": "light, chilled red wines or dry rosé",
+    "pairing-suggestions": ["Pinot Noir", "Beaujolais", "Rosé"]
+  },
+  {
+    "id":9,
+    "category": "beef",
+    "sub-category": "rich, fatty beef",
+    "food-array": ["Ribeye Steak", "Prime Rib", "Beef Short Ribs", "Bone-on Strip Steak"],
+    "pairing-style": "reds with strong tannins",
+    "pairing-suggestions": ["Cabernet Sauvignon", "Malbec", "Syrah/Shiraz", "Bordeaux Blend"]
+  },
+  {
+    "id":10,
+    "category": "beef",
+    "sub-category": "lean beef",
+    "food-array": ["Filet Mignon", "Beef Tenderloin", "Eye of Round"],
+    "pairing-style": "delicate to medium bodied reds",
+    "pairing-suggestions": ["Pinot Noir", "Merlot", "Gamay (Beaujolais)", "Grenache"]
+  },
+  {
+    "id":11,
+    "category": "beef",
+    "sub-category": "sauces with beef",
+    "food-array": ["Steak au Poivre", "Beef with Muchroom or red wine sauce", "Pepper-crusted steak"],
+    "pairing-style": "medium-bodied, complex flavored reds",
+    "pairing-suggestions": ["Syrah (peppery)", "Zinfadel (spicy+jammy)", "Tempranillio (savory+earthy)", "Carmenére (herbal notes)"]
+  },
+  {
+    "id":12,
+    "category": "beef",
+    "sub-category": "slow-cooked and braised beef",
+    "food-array": ["Osso Buco", "Beef Shank", "Beef Bourguignon", "Pot Roast", "Braised Short Ribs"],
+    "pairing-style": "medium to heavy bodied, acidic reds",
+    "pairing-suggestions": ["Nebbiolo", "Barolo", "Barbaresco", "Sangiovese", "Cabernet Franc"]
+  },
+  {
+    "id":13,
+    "category": "beef",
+    "sub-category": "ground beef & casual dishes",
+    "food-array": ["Burgers", "Meatloaf", "Tacos", "Moco Loco", "Sloppy Joes"],
+    "pairing-style": "fun, festive, medium bodied reds",
+    "pairing-suggestions": ["Zinfandel", "Malbec", "Cotes du Rhone", "Lambrusco (dry)"]
+  },
+  {
+    "id":13,
+    "category": "beef",
+    "sub-category": "spiced, asian, mediteranean beef dishes",
+    "food-array": ["Bulgogi", "Stir-fry", "kebabs", "Shwarma", "Chili con Carne", "Curry"],
+    "pairing-style": "flexible, medium bodied reds, off-dry reds, or rose",
+    "pairing-suggestions": ["Zinfandel", "Grenache Blend", "Red Blend (off-dry)", "Rosé"]
+  },
+  {
+    "id": 3,
+    "category": "chicken",
+    "sub-category": "simply roasted or grilled chicken",
+    "food-array": ["Roast Chicken", "Grilled Chicken Breast"],
+    "pairing-style": "medium-bodied whites or light reds that complement without dominating",
+    "pairing-suggestions": ["Chardonnay", "Sauvignon Blanc", "Pinot Noir", "Gamay"]
+  },
+  {
+    "id": 4,
+    "category": "chicken",
+    "sub-category": "rich or creamy chicken dishes",
+    "food-array": ["Chicken Alfredo", "Chicken Pot Pie", "Chicken Fricassée"],
+    "pairing-style": "round, fuller-bodied whites with texture",
+    "pairing-suggestions": ["Oaked Chardonnay", "Viognier", "Marsanne", "White Rhône Blend"]
+  },
+  {
+    "id": 7,
+    "category": "pork",
+    "sub-category": "roasted or grilled pork",
+    "food-array": ["Pork Chop", "Pork Tenderloin", "Roast Pork"],
+    "pairing-style": "medium-bodied wines with good acidity and balance",
+    "pairing-suggestions": ["Pinot Noir", "Grenache", "Chenin Blanc", "Riesling"]
+  },
+  {
+    "id": 8,
+    "category": "lamb",
+    "sub-category": "herb-roasted or grilled lamb",
+    "food-array": ["Rack of Lamb", "Lamb Chops", "Leg of Lamb"],
+    "pairing-style": "earthy, full-bodied reds that complement savory flavors",
+    "pairing-suggestions": ["Syrah", "Cabernet Sauvignon", "Bordeaux Blend", "Tempranillo"]
+  },
+  {
+    "id": 9,
+    "category": "vegetarian",
+    "sub-category": "roasted vegetables and hearty plant-based dishes",
+    "food-array": ["Mushroom Risotto", "Roasted Root Vegetables", "Eggplant Parmesan"],
+    "pairing-style": "wines with earthiness or brightness depending on preparation",
+    "pairing-suggestions": ["Pinot Noir", "Gamay", "Chardonnay", "Sangiovese"]
+  },
+  {
+    "id": 10,
+    "category": "cheese",
+    "sub-category": "soft and creamy cheeses",
+    "food-array": ["Brie", "Camembert", "Triple-Crème Cheese"],
+    "pairing-style": "acid-driven whites or sparkling wines to cut richness",
+    "pairing-suggestions": ["Champagne", "Cava", "Chenin Blanc", "Sauvignon Blanc"]
+  },
+  {
+    "id": 11,
+    "category": "dessert",
+    "sub-category": "chocolate-based desserts",
+    "food-array": ["Chocolate Cake", "Brownies", "Chocolate Mousse"],
+    "pairing-style": "rich, sweet wines with enough body to match chocolate intensity",
+    "pairing-suggestions": ["Port", "Banyuls", "Madeira", "Late Harvest Zinfandel"]
+  },
+  {
+    "id": 12,
+    "category": "dessert",
+    "sub-category": "fruit-based desserts",
+    "food-array": ["Apple Tart", "Berry Cobbler", "Peach Galette"],
+    "pairing-style": "sweet or off-dry wines with bright acidity",
+    "pairing-suggestions": ["Moscato d’Asti", "Late Harvest Riesling", "Sauternes"]
+  },
+  {
+    "id": 13,
+    "category": "dessert",
+    "sub-category": "cream and custard desserts",
+    "food-array": ["Crème Brûlée", "Panna Cotta", "Flan"],
+    "pairing-style": "silky, sweet wines that echo creamy textures",
+    "pairing-suggestions": ["Sauternes", "Tokaji", "Late Harvest Chenin Blanc"]
+  },
+  {
+    "id": 14,
+    "category": "dessert",
+    "sub-category": "nut-based and caramel desserts",
+    "food-array": ["Pecan Pie", "Baklava", "Caramel Tart"],
+    "pairing-style": "oxidative or nutty sweet wines that mirror caramelized flavors",
+    "pairing-suggestions": ["Tawny Port", "Pedro Ximénez Sherry", "Madeira"]
+  },
+  {
+    "id": 15,
+    "category": "dessert",
+    "sub-category": "light and fresh desserts",
+    "food-array": ["Lemon Tart", "Angel Food Cake", "Sorbet"],
+    "pairing-style": "light, aromatic, and refreshing sweet wines",
+    "pairing-suggestions": ["Moscato d'Asti", "Prosecco", "Ice Wine"]
+  }
+]

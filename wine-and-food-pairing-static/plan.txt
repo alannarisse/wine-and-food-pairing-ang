@@ -1,0 +1,12 @@
+The Food Wine Pairer
+
+customer enters in the type of dish they are going to eat.
+Is it beef, chicken, fish, vegetarian, dessert.
+
+Is it spicy, delicate, rich, creamy, acidic
+
+Is it formal, semi formal, semi-causual, dinner at home
+
+What price point are you looking to spend
+
+App will give suggestions, how much they cost, why they would make a good pair.
