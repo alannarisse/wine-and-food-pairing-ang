@@ -7,6 +7,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { PairingService } from '../../services/pairing.service';
 import { Pairing } from '../../models/pairing.model';
+import { WineRecommendationsComponent } from '../wine-recommendations/wine-recommendations.component';
 
 @Component({
   selector: 'app-wine-finder',
@@ -17,7 +18,8 @@ import { Pairing } from '../../models/pairing.model';
     MatSelectModule,
     MatCardModule,
     MatListModule,
-    MatDividerModule
+    MatDividerModule,
+    WineRecommendationsComponent
   ],
   templateUrl: './wine-finder.component.html',
   styleUrl: './wine-finder.component.scss'

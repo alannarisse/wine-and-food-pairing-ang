@@ -45,7 +45,7 @@
       <h3>Recommended Wine Style</h3>
       <p class="pairing-style">{{ currentPairing()?.pairingStyle }}</p>
 
-      <h4>Suggested Wines</h4>
+      <h4>Suggested Varietals</h4>
       <mat-list>
         @for (wine of currentPairing()?.pairingSuggestions; track wine) {
           <mat-list-item>
@@ -53,6 +53,10 @@
           </mat-list-item>
         }
       </mat-list>
+
+      <app-wine-recommendations
+        [pairingSuggestions]="currentPairing()?.pairingSuggestions || []"
+      ></app-wine-recommendations>
     </div>
   }
 </div>
