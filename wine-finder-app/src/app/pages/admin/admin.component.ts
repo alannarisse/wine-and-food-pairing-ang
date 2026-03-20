@@ -1,6 +1,7 @@
-import { Component, inject, signal, computed } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -11,6 +12,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { Wine } from '../../models/wine.model';
 import { WineService } from '../../services/wine.service';
+import { AuthService } from '../../services/auth.service';
 import { WineFormDialogComponent } from '../../components/wine-form-dialog/wine-form-dialog.component';
 import { VarietalMappingComponent } from '../../components/varietal-mapping/varietal-mapping.component';
 
@@ -35,6 +37,8 @@ import { VarietalMappingComponent } from '../../components/varietal-mapping/vari
 })
 export class AdminComponent {
   private readonly wineService = inject(WineService);
+  private readonly authService = inject(AuthService);
+  private readonly router = inject(Router);
   private readonly dialog = inject(MatDialog);
   private readonly snackBar = inject(MatSnackBar);
 
@@ -107,5 +111,10 @@ export class AdminComponent {
     a.click();
     URL.revokeObjectURL(url);
     this.snackBar.open('Data exported successfully', 'Close', { duration: 3000 });
+  }
+
+  logout(): void {
+    this.authService.logout();
+    this.router.navigate(['/']);
   }
 }

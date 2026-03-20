@@ -63,3 +63,7 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## MCP Servers
+This app uses the railway MCP Server and requires the [Railway CLI](https://docs.railway.com/cli)
+[How to install Railway MCP server](https://docs.railway.com/ai/mcp-server)
