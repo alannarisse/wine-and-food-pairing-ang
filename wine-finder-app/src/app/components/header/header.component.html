@@ -1,4 +1,23 @@
 <header>
-  <h1>Wine Finder</h1>
-  <h2>Pair like a pro!</h2>
+  <div class="header-content">
+    <div class="titles">
+      <a routerLink="/" class="title-link">
+        <h1>Wine Finder</h1>
+        <h2>Pair like a pro!</h2>
+      </a>
+    </div>
+    <nav class="header-nav">
+      @if (isAdminPage) {
+        <a mat-stroked-button routerLink="/" class="nav-btn">
+          <mat-icon>home</mat-icon>
+          Home
+        </a>
+      } @else {
+        <a mat-stroked-button routerLink="/admin" class="nav-btn admin-btn">
+          <mat-icon>settings</mat-icon>
+          Admin
+        </a>
+      }
+    </nav>
+  </div>
 </header>

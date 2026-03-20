@@ -1,4 +1,4 @@
-import { Injectable, signal, computed } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { Wine } from '../models/wine.model';
 import { WINES_DATA, VARIETAL_TO_WINES, WINE_RECOMMENDATION_MESSAGE } from '../data/wines.data';
 
@@ -6,10 +6,18 @@ import { WINES_DATA, VARIETAL_TO_WINES, WINE_RECOMMENDATION_MESSAGE } from '../d
   providedIn: 'root'
 })
 export class WineService {
-  private readonly wines = signal<Wine[]>(WINES_DATA);
-  private readonly varietalMapping = VARIETAL_TO_WINES;
+  private readonly wines = signal<Wine[]>([...WINES_DATA]);
+  private readonly varietalMappingSignal = signal<Map<string, number[]>>(
+    new Map(Object.entries(VARIETAL_TO_WINES))
+  );
+  private nextId = Math.max(...WINES_DATA.map(w => w.id)) + 1;
 
   readonly recommendationMessage = WINE_RECOMMENDATION_MESSAGE;
+
+  // For backwards compatibility
+  private get varietalMapping(): Record<string, number[]> {
+    return Object.fromEntries(this.varietalMappingSignal());
+  }
 
   /**
    * Get all wines
@@ -109,5 +117,119 @@ export class WineService {
   getWineDisplayName(wine: Wine): string {
     const year = this.formatYear(wine.year);
     return `${wine.wineryName} ${wine.wineName} ${year}`;
+  }
+
+  // ==================== ADMIN CRUD OPERATIONS ====================
+
+  /**
+   * Add a new wine
+   */
+  addWine(wine: Omit<Wine, 'id'>): Wine {
+    const newWine: Wine = {
+      ...wine,
+      id: this.nextId++
+    };
+    this.wines.update(wines => [...wines, newWine]);
+    return newWine;
+  }
+
+  /**
+   * Update an existing wine
+   */
+  updateWine(wine: Wine): void {
+    this.wines.update(wines =>
+      wines.map(w => w.id === wine.id ? wine : w)
+    );
+  }
+
+  /**
+   * Delete a wine by ID
+   */
+  deleteWine(id: number): void {
+    this.wines.update(wines => wines.filter(w => w.id !== id));
+    // Also remove from all varietal mappings
+    this.varietalMappingSignal.update(mapping => {
+      const newMapping = new Map(mapping);
+      for (const [varietal, ids] of newMapping.entries()) {
+        newMapping.set(varietal, ids.filter(wId => wId !== id));
+      }
+      return newMapping;
+    });
+  }
+
+  /**
+   * Get all unique varietals from the wine data
+   */
+  getAvailableVarietals(): string[] {
+    const varietals = new Set<string>();
+    for (const wine of this.wines()) {
+      varietals.add(wine.varietal);
+    }
+    // Also add varietals from mappings
+    for (const varietal of this.varietalMappingSignal().keys()) {
+      varietals.add(varietal);
+    }
+    return Array.from(varietals).sort();
+  }
+
+  // ==================== VARIETAL MAPPING OPERATIONS ====================
+
+  /**
+   * Get the current varietal mappings
+   */
+  getVarietalMappings(): Map<string, number[]> {
+    return new Map(this.varietalMappingSignal());
+  }
+
+  /**
+   * Add a wine to a varietal mapping
+   */
+  addWineToVarietal(varietal: string, wineId: number): void {
+    this.varietalMappingSignal.update(mapping => {
+      const newMapping = new Map(mapping);
+      const currentIds = newMapping.get(varietal) || [];
+      if (!currentIds.includes(wineId)) {
+        newMapping.set(varietal, [...currentIds, wineId]);
+      }
+      return newMapping;
+    });
+  }
+
+  /**
+   * Remove a wine from a varietal mapping
+   */
+  removeWineFromVarietal(varietal: string, wineId: number): void {
+    this.varietalMappingSignal.update(mapping => {
+      const newMapping = new Map(mapping);
+      const currentIds = newMapping.get(varietal) || [];
+      newMapping.set(varietal, currentIds.filter(id => id !== wineId));
+      return newMapping;
+    });
+  }
+
+  /**
+   * Add a new varietal to the mapping
+   */
+  addVarietal(varietal: string): void {
+    this.varietalMappingSignal.update(mapping => {
+      if (!mapping.has(varietal)) {
+        const newMapping = new Map(mapping);
+        newMapping.set(varietal, []);
+        return newMapping;
+      }
+      return mapping;
+    });
+  }
+
+  // ==================== DATA EXPORT ====================
+
+  /**
+   * Export all wine data and mappings for backup/database migration
+   */
+  exportData(): { wines: Wine[]; varietalMappings: Record<string, number[]> } {
+    return {
+      wines: this.wines(),
+      varietalMappings: Object.fromEntries(this.varietalMappingSignal())
+    };
   }
 }
